@@ -1,1 +1,1 @@
-*README File For ALX Low Level Programming*
+*README File*
