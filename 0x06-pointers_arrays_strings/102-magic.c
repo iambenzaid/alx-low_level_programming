@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - main function
- * @void: take nothing as parameter
- * Return: 0
- */
-
 int main(void)
 {
 	int n;
