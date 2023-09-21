@@ -3,26 +3,28 @@
 
 /**
  * rot13 - function encoder
- * @s: pointer to string
+ *
+ * @s: pointer to a string
+ *
  * Return: return s
  */
 
 char *rot13(char *s)
 {
-	int i;
-	int j;
+	int k, r;
 	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	for (i = 0; s[i] != '\0'; i++)
+
+	for (k = 0; s[k] != '\0'; k++)
 	{
-		for (j = 0; j < 52; j++)
-		{
-			if (s[i] == data1[j])
-			{
-				s[i] = datarot[j];
-				break;
-			}
-		}
+	for (r = 0; r < 52; r++)
+	{
+	if (s[k] == data1[r])
+	{
+	s[k] = datarot[r];
+	break;
+	}
+	}
 	}
 	return (s);
 }
