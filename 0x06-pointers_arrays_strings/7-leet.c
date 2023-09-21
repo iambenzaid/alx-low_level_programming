@@ -2,25 +2,25 @@
 
 /**
  * leet - function to uncode a string.
- * @str: the string to be uncoded.
+ * @n: the string to be uncoded.
  *
  * Return: return the value.
  */
-char *leet(char *str)
+char *leet(char *n)
 {
-	int i = 0, j;
-	char cd[] = "b4Er9sKlm5DBq";
+	int i, j;
+	char s1[] = "aAeEoOtTlL";
+	char s2[] = "4433007711";
 
-	while (*(str + i) != '\0')
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		for (j = 0; j < 14; j += 3)
+		for (j = 0; j < 10; j++)
 		{
-			if (*(str + i) == *(cd + j) || *(str + i) == *(cd + j + 1))
+			if (n[i] == s1[j])
 			{
-				*(str + i) = *(cd + j + 2);
+				n[i] = s2[j];
 			}
 		}
-		i++;
 	}
-	return (str);
+	return (n);
 }
