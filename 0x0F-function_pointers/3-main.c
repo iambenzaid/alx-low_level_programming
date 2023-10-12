@@ -1,43 +1,38 @@
-#include "function_pointers.h"
-#include <stdlib.h>
-#include <stdio.h>
 #include "3-calc.h"
+
 /**
- * main - Function that print the result
- * @argc: count
- * @argv: Array of the arguments
- *
- * Return: 0
- */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+* main - main function
+* @argc: counter
+* @argv: array of arguments
+*
+* Return: 0
+*/
+
+int main(int argc, char *argv[])
 {
-	int num1, num2;
-	char *op;
+	int nmb1, nmb2;
+	char *o;
+	int res;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	num1 = atoi(argv[1]);
-	op = argv[2];
-	num2 = atoi(argv[3]);
-
-	if (get_op_func(op) == NULL || op[1] != '\0')
+	nmb1 = atoi(argv[1]);
+	nmb2 = atoi(argv[3]);
+	o = argv[2];
+	if (get_op_func(o) == 0 || o[1] != 0)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-
-	if ((*op == '/' && num2 == 0) ||
-	    (*op == '%' && num2 == 0))
+	if ((*o == '/' || *o == '%') && nmb2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	printf("%d\n", get_op_func(op)(num1, num2));
-
+	res = get_op_func(o)(nmb1, nmb2);
+	printf("%d\n", res);
 	return (0);
 }
